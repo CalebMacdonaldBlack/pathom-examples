@@ -1,0 +1,26 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="REPL" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" singleton="true">
+    <module name="pathom-example" />
+    <setting name="displayName" value="REPL" />
+    <setting name="replType" value="NREPL" />
+    <setting name="execution" value="DEPS" />
+    <setting name="jvmArgs" value="" />
+    <setting name="parameters" value="" />
+    <setting name="workingDir" value="$PROJECT_DIR$" />
+    <setting name="profiles" value="" />
+    <setting name="aliases" value="local,test" />
+    <setting name="fixLineNumbers" value="false" />
+    <setting name="focusEditor" value="false" />
+    <extension name="net.ashald.envfile">
+      <option name="IS_ENABLED" value="false" />
+      <option name="IS_SUBST" value="false" />
+      <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+      <option name="IS_IGNORE_MISSING_FILES" value="false" />
+      <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+      <ENTRIES>
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+      </ENTRIES>
+    </extension>
+    <method v="2" />
+  </configuration>
+</component>

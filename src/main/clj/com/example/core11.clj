@@ -113,27 +113,42 @@
         (py/db))))
 
 (deftest ->pyramid-db-test
-  (is (= {:db/id {0 {:db/id           0
-                     :house/address   "1 House Street"
-                     :house/occupants [[:db/id 1] [:db/id 2] [:db/id 3]]}
-                  1 {:db/id               1
-                     :house/_occupants    [[:db/id 0]]
-                     :occupant/first-name "Sam"}
-                  2 {:db/id               2
-                     :house/_occupants    [[:db/id 0]]
-                     :occupant/first-name "Kerry"}
-                  3 {:db/id               3
-                     :house/_occupants    [[:db/id 0]]
-                     :occupant/first-name "John"}}}
+  (testing "A query"
+    (is (= {:db/id {0 {:db/id           0
+                       :house/address   "1 House Street"
+                       :house/occupants [[:db/id 1] [:db/id 2] [:db/id 3]]}
+                    1 {:db/id               1
+                       :house/_occupants    [[:db/id 0]]
+                       :occupant/first-name "Sam"}
+                    2 {:db/id               2
+                       :house/_occupants    [[:db/id 0]]
+                       :occupant/first-name "Kerry"}
+                    3 {:db/id               3
+                       :house/_occupants    [[:db/id 0]]
+                       :occupant/first-name "John"}}}
 
-         (-> {:house/address   "1 House Street"
-              :house/occupants [{:occupant/first-name "Sam"}
-                                {:occupant/first-name "Kerry"}
-                                {:occupant/first-name "John"}]}
-             (->pyramid-db)))))
+           (-> {:house/address   "1 House Street"
+                :house/occupants [{:occupant/first-name "Sam"}
+                                  {:occupant/first-name "Kerry"}
+                                  {:occupant/first-name "John"}]}
+               (->pyramid-db)))))
 
-(-> {:house/address   "1 House Street"
-     :house/occupants [{:occupant/first-name "Sam"}
-                       {:occupant/first-name "Kerry"}
-                       {:occupant/first-name "John"}]}
-    (->pyramid-db))
+  (testing "A query with derived data"
+    (is (= {:db/id {0 {:db/id           0
+                       :house/address   "1 House Street"
+                       :house/occupants [[:db/id 1] [:db/id 2] [:db/id 3]]}
+                    1 {:db/id               1
+                       :house/_occupants    [[:db/id 0]]
+                       :occupant/first-name "Sam"}
+                    2 {:db/id               2
+                       :house/_occupants    [[:db/id 0]]
+                       :occupant/first-name "Kerry"}
+                    3 {:db/id               3
+                       :house/_occupants    [[:db/id 0]]
+                       :occupant/first-name "John"}}}
+
+           (-> {:house/address   "1 House Street"
+                :house/occupants [{:occupant/first-name "Sam"}
+                                  {:occupant/first-name "Kerry"}
+                                  {:occupant/first-name "John"}]}
+               (->pyramid-db))))))

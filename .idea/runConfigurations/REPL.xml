@@ -8,7 +8,7 @@
     <setting name="parameters" value="" />
     <setting name="workingDir" value="$PROJECT_DIR$" />
     <setting name="profiles" value="" />
-    <setting name="aliases" value="local,test" />
+    <setting name="aliases" value="caleb,local,test" />
     <setting name="fixLineNumbers" value="false" />
     <setting name="focusEditor" value="false" />
     <extension name="net.ashald.envfile">
@@ -18,7 +18,7 @@
       <option name="IS_IGNORE_MISSING_FILES" value="false" />
       <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
       <ENTRIES>
-        <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
       </ENTRIES>
     </extension>
     <method v="2" />
